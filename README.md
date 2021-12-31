@@ -6,7 +6,12 @@ My solutions for the Advent of Code 2021 (done mostly in 2022)
   (then three) that add up to 2020 (*easy*)
 * **Day 2** (Python): Read each line, and validate password against 
   character-count rules (*easy*)
-
+* **Day 3** (Python): Count up the number of '#' encountered when traversing
+  an array with a given dx/dy slope for each step. The rows wrap if x 
+  coordinate is wider than the data (*easy*).
+* **Day 4** (Python): Simple validation of semi-structured text "passports",
+  first looking for missing fields, then checking field contents against some
+  simple rules (*easy*).
 
 To compile and run a Go program
 * Change into the directory with the program
