@@ -28,6 +28,11 @@ My solutions for the Advent of Code 2021 (done mostly in 2022)
   an instruction is executed the second time. For Part 2, find which nop or jmp
   needs to be changed to the opposite instruction, in order to fix the infinite
   loop. (*easy*)
+* **Day 9** (Julia): Given a list of numbers, and a given sliding window width, 
+  find the first number that cannot be the sum of two digits in the preceding
+  window. For Part 2, find any set of at least two contiguous numbers that add
+  up to the number not found above, and return the sum of the minimum and
+  maximum of this range (*easy*).
 
 To compile and run a Go program
 * Change into the directory with the program
