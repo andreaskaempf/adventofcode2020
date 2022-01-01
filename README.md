@@ -23,7 +23,11 @@ My solutions for the Advent of Code 2021 (done mostly in 2022)
   everyone answered "yes". What is the sum of those counts? (*easy*)
 * **Day 7** (Python): Recursively navigate a tree upwards (Part 1) and
   downwards (Part 2), to count how many bags contain a given type of bag, and
-  how many bags a given type of bag ultimately contains.
+  how many bags a given type of bag ultimately contains. (*easy*)
+* **Day 8** (Python): Simulate execute of some simple bytecode, and detect when
+  an instruction is executed the second time. For Part 2, find which nop or jmp
+  needs to be changed to the opposite instruction, in order to fix the infinite
+  loop. (*easy*)
 
 To compile and run a Go program
 * Change into the directory with the program
