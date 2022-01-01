@@ -21,6 +21,9 @@ My solutions for the Advent of Code 2021 (done mostly in 2022)
   number of questions to which anyone answered "yes". What is the sum of those
   counts?  Part 2: For each group, count the number of questions to which
   everyone answered "yes". What is the sum of those counts? (*easy*)
+* **Day 7** (Python): Recursively navigate a tree upwards (Part 1) and
+  downwards (Part 2), to count how many bags contain a given type of bag, and
+  how many bags a given type of bag ultimately contains.
 
 To compile and run a Go program
 * Change into the directory with the program
