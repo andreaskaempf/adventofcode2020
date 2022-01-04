@@ -24,15 +24,23 @@ My solutions for the Advent of Code 2021 (done mostly in 2022)
 * **Day 7** (Python): Recursively navigate a tree upwards (Part 1) and
   downwards (Part 2), to count how many bags contain a given type of bag, and
   how many bags a given type of bag ultimately contains. (*easy*)
+
 * **Day 8** (Python): Simulate execute of some simple bytecode, and detect when
   an instruction is executed the second time. For Part 2, find which nop or jmp
   needs to be changed to the opposite instruction, in order to fix the infinite
   loop. (*easy*)
+
 * **Day 9** (Julia): Given a list of numbers, and a given sliding window width, 
   find the first number that cannot be the sum of two digits in the preceding
   window. For Part 2, find any set of at least two contiguous numbers that add
   up to the number not found above, and return the sum of the minimum and
   maximum of this range (*easy*).
+
+* **Day 10** (Python): Given a sequence of numbers, count up the number of 1-
+  and 3- gaps within the list. Then, count up all the possible paths between
+  the lowest and highest values, enforcing the constraint that the gap between
+  any two number cannot be more than 3. Exhaustive recursive approach was too
+  slow, but extremely fast if you cache interim results (7 ms in Python, *medium*).
 
 To compile and run a Go program
 * Change into the directory with the program
