@@ -42,6 +42,10 @@ My solutions for the Advent of Code 2021 (done mostly in 2022)
   any two number cannot be more than 3. Exhaustive recursive approach was too
   slow, but extremely fast if you cache interim results (7 ms in Python, *medium*).
 
+* **Day 11** (Go): Change the state of a "seating plan" depending on 
+  available seats immediately adjacent to every seat (Part 1), or visible 
+  in any direction (Part 2). *Easy*, but took a long time.
+
 To compile and run a Go program
 * Change into the directory with the program
 * go build day02.go
