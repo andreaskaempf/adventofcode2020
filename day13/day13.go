@@ -116,9 +116,12 @@ func part2(nn []int64) int64 {
 	}
 	fmt.Printf("\nPart2: step %d found at %d\n", step, stepi)
 
+	// Initial value for the time, adjusted to account for the offset
+	// of the longest bus duration found above
+	var x int64 = step - stepi
+
 	// Loop until we find a solution, i.e., the first time at which
-	// all the known buses arrive at the same time
-	var x int64 = step - stepi // initial value
+	// the first bus arrives at t, the second at t+1, etc.
 	for {
 
 		// Show progress
@@ -128,8 +131,8 @@ func part2(nn []int64) int64 {
 		}
 		c++
 
-		// Test current value: do all the buses arrive
-		// at exactly this time, i.e., is t / bus freq
+		// Test current value: do all the buses arrive at exactly
+		// at this time plus the offset, i.e., is (t + i) / bus freq
 		// an exact integer for all the buses?
 		foundIt := true
 		for i := 0; i < len(nn); i++ {
@@ -148,7 +151,4 @@ func part2(nn []int64) int64 {
 		// Next value
 		x += step
 	}
-
-	// Return -1 if fails (should never happen because of infinite loop)
-	return -1
 }
