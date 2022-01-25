@@ -1,6 +1,7 @@
 # Advent of Code 2020
 
-My solutions for the Advent of Code 2021 (done mostly in 2022)
+My solutions for the Advent of Code 2020 (done mostly in 2022),
+see https://adventofcode.com/2020
 
 * **Day 1** (Python): Read through a list of numbers, and find two
   (then three) that add up to 2020 (*easy*)
@@ -57,16 +58,31 @@ My solutions for the Advent of Code 2021 (done mostly in 2022)
   (should have been easy, but instructions were hard to understand, 
   so *medium*).
 
-To compile and run a Go program
+* **Day 13** (Go): Solve problems related to a schdule of bus times, where
+  all buses leave at t = 0, but take different number of minutes to reach 
+  the station. For Part 1, find the earliest bus that will arrive. 
+  For Part 2, find the earliest time at which the first bus arrives at t, 
+  the second at t+1, and so on. Used a brute force solution (takes 1 hr 10 
+  mins), but there must be a better way. This solution was quite easy, but 
+  I'm marking this problem as *hard* since I spent a lot of time trying 
+  unsuccessfully to come up with an algorithm for Part 2 that would find 
+  the solution directly, rather than using brute force.
+
+To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
 * ./day02
 
-To run a Julia program
+To compile and run a **Rust** program
+* Change into the directory with the program
+* rustc day02.go
+* ./day02
+
+To run a **Julia** program
 * Change into the directory with the program
 * julia day02.jl
 
-And of course, to run a Python program
+And of course, to run a **Python** program
 * Change into the directory with the program
 * python day06.py
 
