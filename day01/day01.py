@@ -9,6 +9,7 @@
 nums = [int(n) for n in open('input.txt').readlines()]
 
 # Find two numbers that add up to 2020
+print('Part 1:')
 for i in nums:
     for j in nums:
         if i + j == 2020:
@@ -16,6 +17,7 @@ for i in nums:
             break
 
 # Same for 3 numbers
+print('Part 2:')
 for i in nums:
     for j in nums:
         for k in nums:

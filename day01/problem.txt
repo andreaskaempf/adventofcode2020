@@ -37,7 +37,7 @@ them together produces 1721 * 299 = 514579, so the correct answer is 514579.
 Of course, your expense report is much larger. Find the two entries that sum to
 2020; what do you get if you multiply them together?
 
-Your puzzle answer was 436404.
+Your puzzle answer was 436404 (old), 902451 (new).
 
 --- Part Two ---
 
@@ -52,7 +52,7 @@ and 675. Multiplying them together produces the answer, 241861950.
 In your expense report, what is the product of the three entries that sum to
 2020?
 
-Your puzzle answer was 274879808.
+Your puzzle answer was 274879808 (old), 85555470 (new).
 
 Both parts of this puzzle are complete! They provide two gold stars: **
 

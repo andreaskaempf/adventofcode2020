@@ -33,7 +33,7 @@ their respective policies.
 
 How many passwords are valid according to their policies?
 
-Your puzzle answer was 607.
+Your puzzle answer was 607 (old), 506 (new).
 
 --- Part Two ---
 
@@ -60,7 +60,7 @@ Given the same example list from above:
 How many passwords are valid according to the new interpretation of the
 policies?
 
-Your puzzle answer was 321.
+Your puzzle answer was 321 (old), 443 (new).
 
 Both parts of this puzzle are complete! They provide two gold stars: **
 
