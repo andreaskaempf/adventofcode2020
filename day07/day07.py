@@ -8,8 +8,9 @@
 
 # Read [outer, inner] rules into dictionary, duplicate where multiple
 f = 'sample2.txt'
-f = 'input.txt'
 f = 'sample1.txt'
+f = 'input.old'
+f = 'input.txt'
 bags = []  # list of [outer, inner] with duplicates
 for l in open(f):
 
