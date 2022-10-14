@@ -10,8 +10,8 @@
 # Read [outer, inner] rules into dictionary, duplicate where multiple
 f = 'sample2.txt'
 f = 'sample1.txt'
-f = 'input.txt'
 f = 'input.old'
+f = 'input.txt'
 
 # Dictionary of colours encountered, with list of colors within
 bags = {}  # { "color" : ["color1", "color2", ...] }
@@ -52,18 +52,14 @@ n = 0
 for c in bags.keys():  # every outer bag color
     if contains1(c, 'shiny gold'):
         n += 1
-        #print(c)
 print(n, 'colors')
-
-for b in bags.keys():
-    print(b, bags[b])
 
 # Part 2: how many bags must a "shiny gold" bag contain?
 def contains2(bagtype):
+    bt = bags[bagtype]
     count = 0
-    for c in bags[bagtype].keys():
-        print(c, bags[bagtype][c], contains2(c))
-        count += bags[bagtype][c] + contains2(c)
+    for c in bt.keys():
+        count += bt[c] + bt[c] * contains2(c)
     return count
 
 print('Part 2:', contains2("shiny gold"))
