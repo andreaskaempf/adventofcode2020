@@ -75,6 +75,10 @@ see https://adventofcode.com/2020
   both parts, sum up the values in memory to get the answer. *Medium*, because
   of convoluted instructions and manipulation/explosion of bit masks.
 
+* **Day 15** (Go): Simulate a convoluted memory game, which becomes infeasible
+  using a simple list of history, when the number of iterations goes from 
+  2020 (part 1) to 30 million (part 2).
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
