@@ -68,6 +68,13 @@ see https://adventofcode.com/2020
   unsuccessfully to come up with an algorithm for Part 2 that would find 
   the solution directly, rather than using brute force.
 
+* **Day 14** (Go): Read a "program" consisting of binary masks and instructions
+  to set memory at given address to a value. For part 1, apply the mask to the
+  value. For Part 2, first apply the mask to the address, then expand the
+  address to all possible permutations where 'X' are changed to 1 and 0. For
+  both parts, sum up the values in memory to get the answer. *Medium*, because
+  of convoluted instructions and manipulation/explosion of bit masks.
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
@@ -82,7 +89,7 @@ To run a **Julia** program
 * Change into the directory with the program
 * julia day02.jl
 
-And of course, to run a **Python** program
+To run a **Python** program
 * Change into the directory with the program
 * python day06.py
 
