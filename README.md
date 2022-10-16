@@ -79,6 +79,12 @@ see https://adventofcode.com/2020
   using a simple list of history, when the number of iterations goes from 
   2020 (part 1) to 30 million (part 2).
 
+* **Day 16** (Go): Read a file containing train ticket field names, and data
+  for my ticket and a bunch of other tickets. In Part 1, identify and remove
+  tickets that are invalid, because they do not match the allowed ranges for
+  any field.  In Part 2, infer which columns relate to which fields, and report
+  the value of "departure" fields for my ticket. *Hard*
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
