@@ -85,6 +85,14 @@ see https://adventofcode.com/2020
   any field.  In Part 2, infer which columns relate to which fields, and report
   the value of "departure" fields for my ticket. *Hard*
 
+* **Day 17** (Go): Input is a set of "cubes" in 2-d space, either on or off.
+  For part 1, this is extended to 3-d space, for part 2 4-d space. Simulate a
+  set of simple rules, depending on current state of a cube and the number of
+  "on" neighbours it has. Simulation is supposed to occur "simulataneously", so
+  apply changes to future state, then roll them to current state after each
+  iteration. Part 2 is a trivial set of modifications to Part 1, to make it 4-d
+  instead of 3-d, so only the Part 2 code is retained here. *Medium*
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
