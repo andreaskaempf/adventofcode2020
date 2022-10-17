@@ -93,6 +93,13 @@ see https://adventofcode.com/2020
   iteration. Part 2 is a trivial set of modifications to Part 1, to make it 4-d
   instead of 3-d, so only the Part 2 code is retained here. *Medium*
 
+* **Day 18** (Go): Parse and evaluate four-function arithmetic expressions with
+  parentheses, with left-to right evaluation (no operator precedence) for Part
+  1, and mult/div having higher precedence for Part 2. Implemented Djikstra's
+  Shunting Yard Algorithm. Part 2 was a trivial change to some precedence
+  weights. *Hard*
+
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
