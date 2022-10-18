@@ -1,0 +1,20 @@
+# Initialize a directory for Advent of Code
+
+if [ "$1" == "" ]
+then
+  echo "Missing day number"
+  exit
+fi
+
+if [ -d $1 ]
+then
+  echo "Directory already exists"
+  exit
+fi
+
+mkdir $1
+cd $1
+cp ../template/* .
+mv template.go $1.go
+go mod init $1
+
