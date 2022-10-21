@@ -99,6 +99,9 @@ see https://adventofcode.com/2020
   Shunting Yard Algorithm. Part 2 was a trivial change to some precedence
   weights. *Hard*
 
+* **Day 19** (Go): Recursively find if character pattern matches a set of
+  recursive pattern rules; solved by converting rules to a large regular 
+  expression, recursive for Part 2. *Hard*
 
 To compile and run a **Go** program
 * Change into the directory with the program
