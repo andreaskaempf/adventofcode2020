@@ -103,6 +103,14 @@ see https://adventofcode.com/2020
   recursive pattern rules; solved by converting rules to a large regular 
   expression, recursive for Part 2. *Hard*
 
+* **Day 20** (Go): Assemble a set of "tiles" into an image, so adjacent edges
+  match, flipping or rotating as necessary. Part 1 is the product of the IDs of
+  the corner tiles.  For Part 2, strip the edges of the tiles and assemble them 
+  into a combined image, then search for a 3-line "sea monster" pattern 
+  (flipping and rotating the combined image as required), and report the number 
+  of hash marks in the image that are not covered up by the "sea monsters" 
+  found. *Very hard*
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
