@@ -111,6 +111,11 @@ see https://adventofcode.com/2020
   of hash marks in the image that are not covered up by the "sea monsters" 
   found. *Very hard*
 
+* **Day 21** (Go): Read a list of ingredients and associated allergens, and 
+  determine which ingredients do not produce any allergies (Part 1), and a 
+  list of ingredients which produce allergies, sorted by allergen (Part 2). 
+  *Quite easy* using set operations.
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go
