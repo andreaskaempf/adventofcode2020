@@ -116,6 +116,17 @@ see https://adventofcode.com/2020
   list of ingredients which produce allergies, sorted by allergen (Part 2). 
   *Quite easy* using set operations.
 
+* **Day 22**: TO DO
+
+* **Day 23**: TO DO
+
+* **Day 24** (Go): Given black/white tiles on a hexoganal grid, follow set of
+  movement directions and flip over tiles, then count number of black tiles.
+  For Part 2, simulate 100 days of flipping tiles based on state and number of
+  adjacent black tiles. *medium*
+
+* **Day 25**: TO DO
+
 To compile and run a **Go** program
 * Change into the directory with the program
 * go build day02.go

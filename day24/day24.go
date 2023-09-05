@@ -1,7 +1,13 @@
 // Advent of Code 2020, Day 24
 //
-// Part 1: Count the number of black tiles in a hexagonal grid
-// Part 2: Simulate 100 days of flipping tiles in a hexagonal grid
+// Given black/white tiles on a hexoganal grid, follow set of movement
+// directions and flip over tiles, then count number of black tiles.
+// For Part 2, simulate 100 days of flipping tiles based on state and
+// number of adjacent black tiles.
+//
+// Useful: https://www.redblobgames.com/grids/hexagons/
+//
+// AK, 5/09/2023
 
 package main
 
@@ -12,7 +18,7 @@ import (
 )
 
 // A point is a coordinate in a hexagonal grid
-type point struct {
+type Point struct {
 	x, y int
 }
 
@@ -29,46 +35,68 @@ func main() {
 	// Convert to string and split lines
 	lines := strings.Split(string(data), "\n")
 
-	// Part 1: simulate one day, ignorning neighbors
-	// S/b 10 for sample, 266 for input
-	part1 := simulateDays(1, lines, false)
-	fmt.Println("Part 1:", part1)
-}
-
-func simulateDays(days int, lines []string, considerNeighbors bool) int {
-
 	// Create an empty map of coordinates
-	coords := map[point]int{} // empty map of coords
+	coords := map[Point]int{} // empty map of coords
 
-	// Do each day
-	for day := 0; day < days; day++ {
+	// Do part 1: follow instructions to flip tiles
+	for _, line := range lines {
 
-		// Process each line of instructions
-		for _, line := range lines {
+		// Skip empty lines
+		if len(line) == 0 {
+			continue
+		}
 
-			// Skip empty lines
-			if len(line) == 0 {
-				continue
+		// Start at 0,0 and move the point according to the instructions
+		insts := parseLine(line)
+		p := Point{0, 0}
+		for _, inst := range insts {
+			p = move(p, inst)
+		}
+
+		// Flip tile at this location
+		coords[p] = 1 - coords[p]
+	}
+
+	// Part 1: show number of black tiles
+	fmt.Println("Part 1 (s/b 10 or 266):", sum(coords))
+
+	// For part 2, simulate 100 days:
+	// 1. Any black tile with zero or more than 2 black tiles
+	//    immediately adjacent to it is flipped to white.
+	// 2. Any white tile with exactly 2 black tiles immediately adjacent
+	//    to it is flipped to black.
+	// The rules are applied simultaneously to every tile; put another
+	// way, it is first determined which tiles need to be flipped, then
+	// they are all flipped at the same time.
+	for day := 0; day < 100; day++ {
+
+		// Accumulate changes based on state of tile and number of adjacent black tiles
+		changes := map[Point]int{}     // changes to be applied at end of day
+		for x := -100; x <= 100; x++ { // every tile on the floor, make
+			for y := -100; y <= 100; y++ { // big enough to cover all points
+				p := Point{x, y}
+				nblack := countNeighbors(coords, p)
+				if coords[p] == 1 && (nblack == 0 || nblack > 2) {
+					changes[p] = 0
+				}
+				if coords[p] == 0 && nblack == 2 {
+					changes[p] = 1
+				}
 			}
+		}
 
-			// Start at 0,0 and move the point according to the instructions
-			//fmt.Println(line)
-			insts := parseLine(line)
-			p := point{0, 0}
-			for _, inst := range insts {
-				p = move(p, inst)
-			}
-
-			// Toggle the final position
-			if coords[p] == 0 {
-				coords[p] = 1
-			} else {
-				coords[p] = 0
-			}
+		// Apply changes at end of each day
+		for p, c := range changes {
+			coords[p] = c
 		}
 	}
 
-	// Count up the flipped tiles
+	// Part 2: count up the black tiles
+	fmt.Println("Part 2 (s/b 2208 or 3627):", sum(coords))
+}
+
+// Sum up the values of a map
+func sum(coords map[Point]int) int {
 	count := 0
 	for _, v := range coords {
 		count += v
@@ -91,7 +119,7 @@ func parseLine(line string) []string {
 }
 
 // Move a point in a hexagonal grid
-func move(p point, dir string) point {
+func move(p Point, dir string) Point {
 	switch dir {
 	case "e":
 		p.x++
@@ -112,7 +140,7 @@ func move(p point, dir string) point {
 }
 
 // Count the number of neighbors of a point that are black
-func countNeighbors(coords map[point]int, p point) int {
+func countNeighbors(coords map[Point]int, p Point) int {
 	count := 0
 	for _, dir := range []string{"e", "w", "ne", "nw", "se", "sw"} {
 		n := move(p, dir)
