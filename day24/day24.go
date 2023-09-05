@@ -1,3 +1,8 @@
+// Advent of Code 2020, Day 24
+//
+// Part 1: Count the number of black tiles in a hexagonal grid
+// Part 2: Simulate 100 days of flipping tiles in a hexagonal grid
+
 package main
 
 import (
@@ -21,30 +26,45 @@ func main() {
 		panic(err)
 	}
 
-	// Create a map of coordinates
-	coords := map[point]int{}
-
-	// Process each line
+	// Convert to string and split lines
 	lines := strings.Split(string(data), "\n")
-	for _, line := range lines {
 
-		if len(line) == 0 {
-			continue
-		}
+	// Part 1: simulate one day, ignorning neighbors
+	// S/b 10 for sample, 266 for input
+	part1 := simulateDays(1, lines, false)
+	fmt.Println("Part 1:", part1)
+}
 
-		// Move the point according tot he instructions
-		fmt.Println(line)
-		insts := parseLine(line)
-		p := point{0, 0}
-		for _, inst := range insts {
-			p = move(p, inst)
-		}
+func simulateDays(days int, lines []string, considerNeighbors bool) int {
 
-		// Toggle the final position
-		if coords[p] == 0 {
-			coords[p] = 1
-		} else {
-			coords[p] = 0
+	// Create an empty map of coordinates
+	coords := map[point]int{} // empty map of coords
+
+	// Do each day
+	for day := 0; day < days; day++ {
+
+		// Process each line of instructions
+		for _, line := range lines {
+
+			// Skip empty lines
+			if len(line) == 0 {
+				continue
+			}
+
+			// Start at 0,0 and move the point according to the instructions
+			//fmt.Println(line)
+			insts := parseLine(line)
+			p := point{0, 0}
+			for _, inst := range insts {
+				p = move(p, inst)
+			}
+
+			// Toggle the final position
+			if coords[p] == 0 {
+				coords[p] = 1
+			} else {
+				coords[p] = 0
+			}
 		}
 	}
 
@@ -53,7 +73,7 @@ func main() {
 	for _, v := range coords {
 		count += v
 	}
-	fmt.Println("Part 1:", count)
+	return count
 }
 
 // Convert a line of instructins to a list of directions
@@ -89,4 +109,14 @@ func move(p point, dir string) point {
 		p.y++
 	}
 	return p
+}
+
+// Count the number of neighbors of a point that are black
+func countNeighbors(coords map[point]int, p point) int {
+	count := 0
+	for _, dir := range []string{"e", "w", "ne", "nw", "se", "sw"} {
+		n := move(p, dir)
+		count += coords[n]
+	}
+	return count
 }
